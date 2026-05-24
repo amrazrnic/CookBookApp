@@ -84,7 +84,7 @@
                 android:id="@+id/etLoginEmail"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:hint="tvoj@email.com"
+
 
                 android:textColor="#FFFFFF"
                 android:background="#16213E"
@@ -104,7 +104,7 @@
                 android:id="@+id/etLoginPassword"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:hint="••••••••"
+
 
                 android:textColor="#FFFFFF"
                 android:background="#16213E"
@@ -163,7 +163,7 @@
                 android:id="@+id/etRegisterEmail"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:hint="tvoj@email.com"
+
 
                 android:textColor="#FFFFFF"
                 android:background="#16213E"

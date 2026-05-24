@@ -32,14 +32,9 @@ public class HomeActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_home);
 
-        // Pozdrav sa imenom korisnika
+
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        TextView tvGreeting = findViewById(R.id.tvGreeting);
-        if (user != null && user.getEmail() != null) {
-            String email = user.getEmail();
-            String name = email.substring(0, email.indexOf("@"));
-            tvGreeting.setText("Zdravo, " + name + " 👋");
-        }
+
 
         // Učitaj sample recepte
         loadSampleRecipes();
@@ -64,8 +59,7 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         // Navigation
-        findViewById(R.id.btnNavProfile).setOnClickListener(v ->
-                startActivity(new Intent(this, ProfileActivity.class)));
+
 
         findViewById(R.id.tvProfileBtn).setOnClickListener(v ->
                 startActivity(new Intent(this, ProfileActivity.class)));
