@@ -51,11 +51,9 @@ public class LoginActivity extends AppCompatActivity {
         btnTabRegister = findViewById(R.id.btnTabRegister);
         tvError = findViewById(R.id.tvError);
 
-        // Tab switcher
         btnTabLogin.setOnClickListener(v -> showLogin());
         btnTabRegister.setOnClickListener(v -> showRegister());
 
-        // Login dugme
         findViewById(R.id.btnLogin).setOnClickListener(v -> {
             String email = etLoginEmail.getText().toString().trim();
             String password = etLoginPassword.getText().toString().trim();

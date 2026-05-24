@@ -41,7 +41,6 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
         holder.tvTime.setText("⏱ " + recipe.getTime());
         holder.tvFavorite.setText(recipe.isFavorite() ? "❤️" : "🤍");
 
-        // Klik na favorit
         holder.tvFavorite.setOnClickListener(v -> {
             recipe.setFavorite(!recipe.isFavorite());
             holder.tvFavorite.setText(recipe.isFavorite() ? "❤️" : "🤍");

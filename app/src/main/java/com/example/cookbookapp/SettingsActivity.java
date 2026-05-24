@@ -17,7 +17,6 @@ public class SettingsActivity extends AppCompatActivity {
 
         findViewById(R.id.btnBackSettings).setOnClickListener(v -> finish());
 
-        // Tamna tema switch
         Switch switchDarkMode = findViewById(R.id.switchDarkMode);
         switchDarkMode.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
@@ -27,7 +26,6 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
-        // Notifikacije switch
         Switch switchNotifications = findViewById(R.id.switchNotifications);
         switchNotifications.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {

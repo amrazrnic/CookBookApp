@@ -46,7 +46,6 @@ public class ShoppingActivity extends AppCompatActivity {
                     prefs.edit().putBoolean(itemName, isChecked).apply());
         }
 
-        // Ucitaj dodane stavke
         int extraCount = prefs.getInt("extra_count", 0);
         for (int i = 0; i < extraCount; i++) {
             String text = prefs.getString("extra_" + i, "");
@@ -54,7 +53,6 @@ public class ShoppingActivity extends AppCompatActivity {
             if (!text.isEmpty()) addExtraItem(text, checked, i);
         }
 
-        // Back dugme
         findViewById(R.id.btnBackShopping).setOnClickListener(v -> finish());
 
         // Dodaj stavku

@@ -35,8 +35,6 @@ public class HomeActivity extends AppCompatActivity {
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-
-        // Učitaj sample recepte
         loadSampleRecipes();
 
         // RecyclerView
