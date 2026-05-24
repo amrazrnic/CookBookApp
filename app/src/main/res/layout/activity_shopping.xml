@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1A1A2E">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/btnBackShopping"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="←"
+            android:textSize="22sp"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:background="#16213E" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Lista za kupovinu"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp" />
+
+        <Button
+            android:id="@+id/btnClearAll"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="Obriši sve"
+            android:textSize="12sp"
+            android:textColor="#E94560"
+            android:background="@android:color/transparent" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Osnovne namirnice"
+                android:textColor="#A0A0B0"
+                android:textSize="13sp"
+                android:layout_marginBottom="10dp" />
+
+            <CheckBox android:id="@+id/cbBrasno" android:layout_width="match_parent" android:layout_height="48dp" android:text="Brasno" android:textColor="#FFFFFF" android:textSize="15sp" android:buttonTint="#E94560" android:background="#16213E" android:paddingStart="16dp" android:layout_marginBottom="2dp" />
+            <CheckBox android:id="@+id/cbUlje" android:layout_width="match_parent" android:layout_height="48dp" android:text="Ulje" android:textColor="#FFFFFF" android:textSize="15sp" android:buttonTint="#E94560" android:background="#16213E" android:paddingStart="16dp" android:layout_marginBottom="2dp" />
+            <CheckBox android:id="@+id/cbJaja" android:layout_width="match_parent" android:layout_height="48dp" android:text="Jaja" android:textColor="#FFFFFF" android:textSize="15sp" android:buttonTint="#E94560" android:background="#16213E" android:paddingStart="16dp" android:layout_marginBottom="2dp" />
+            <CheckBox android:id="@+id/cbMlijeko" android:layout_width="match_parent" android:layout_height="48dp" android:text="Mlijeko" android:textColor="#FFFFFF" android:textSize="15sp" android:buttonTint="#E94560" android:background="#16213E" android:paddingStart="16dp" android:layout_marginBottom="2dp" />
+            <CheckBox android:id="@+id/cbSecer" android:layout_width="match_parent" android:layout_height="48dp" android:text="Secer" android:textColor="#FFFFFF" android:textSize="15sp" android:buttonTint="#E94560" android:background="#16213E" android:paddingStart="16dp" android:layout_marginBottom="2dp" />
+            <CheckBox android:id="@+id/cbSo" android:layout_width="match_parent" android:layout_height="48dp" android:text="So" android:textColor="#FFFFFF" android:textSize="15sp" android:buttonTint="#E94560" android:background="#16213E" android:paddingStart="16dp" android:layout_marginBottom="2dp" />
+            <CheckBox android:id="@+id/cbMaslac" android:layout_width="match_parent" android:layout_height="48dp" android:text="Maslac" android:textColor="#FFFFFF" android:textSize="15sp" android:buttonTint="#E94560" android:background="#16213E" android:paddingStart="16dp" android:layout_marginBottom="2dp" />
+            <CheckBox android:id="@+id/cbLuk" android:layout_width="match_parent" android:layout_height="48dp" android:text="Luk" android:textColor="#FFFFFF" android:textSize="15sp" android:buttonTint="#E94560" android:background="#16213E" android:paddingStart="16dp" android:layout_marginBottom="2dp" />
+            <CheckBox android:id="@+id/cbBijeliluk" android:layout_width="match_parent" android:layout_height="48dp" android:text="Bijeli luk" android:textColor="#FFFFFF" android:textSize="15sp" android:buttonTint="#E94560" android:background="#16213E" android:paddingStart="16dp" android:layout_marginBottom="2dp" />
+            <CheckBox android:id="@+id/cbParadajz" android:layout_width="match_parent" android:layout_height="48dp" android:text="Paradajz" android:textColor="#FFFFFF" android:textSize="15sp" android:buttonTint="#E94560" android:background="#16213E" android:paddingStart="16dp" android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dodaj jos:"
+                android:textColor="#A0A0B0"
+                android:textSize="13sp"
+                android:layout_marginBottom="10dp" />
+
+            <LinearLayout
+                android:id="@+id/layoutExtraItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="24dp">
+
+                <EditText
+                    android:id="@+id/etNewItem"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:textColor="#FFFFFF"
+                    android:background="#16213E"
+                    android:paddingStart="16dp"
+                    android:inputType="text"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true" />
+
+                <Button
+                    android:id="@+id/btnAddItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="Dodaj"
+                    android:textColor="#FFFFFF"
+                    android:background="#E94560"
+                    android:layout_marginStart="8dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

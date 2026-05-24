@@ -45,6 +45,11 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
         holder.tvFavorite.setOnClickListener(v -> {
             recipe.setFavorite(!recipe.isFavorite());
             holder.tvFavorite.setText(recipe.isFavorite() ? "❤️" : "🤍");
+            if (recipe.isFavorite()) {
+                FavoritesManager.getInstance().addFavorite(recipe);
+            } else {
+                FavoritesManager.getInstance().removeFavorite(recipe);
+            }
         });
 
         // Klik na recept, otvori detail ekran

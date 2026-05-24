@@ -12,8 +12,8 @@ import com.google.firebase.auth.FirebaseUser;
 public class ProfileActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private EditText etProfileName, etChangeEmail, etNewPassword;
-    private TextView tvProfileName, tvProfileEmail, tvProfileEmailField;
+    private EditText etChangeEmail, etNewPassword;
+    private TextView tvProfileName, tvProfileEmail, tvProfileEmailField, etProfileName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,17 +26,19 @@ public class ProfileActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
 
-        etProfileName = findViewById(R.id.etProfileName);
         etChangeEmail = findViewById(R.id.etChangeEmail);
         etNewPassword = findViewById(R.id.etNewPassword);
         tvProfileName = findViewById(R.id.tvProfileName);
         tvProfileEmail = findViewById(R.id.tvProfileEmail);
         tvProfileEmailField = findViewById(R.id.tvProfileEmailField);
+        etProfileName = findViewById(R.id.etProfileName);
 
         // Popuni podatke korisnika
         if (user != null) {
             String email = user.getEmail();
-            String name = email.substring(0, email.indexOf("@"));
+            String name = user.getDisplayName() != null && !user.getDisplayName().isEmpty()
+                    ? user.getDisplayName()
+                    : email.substring(0, email.indexOf("@"));
             tvProfileName.setText(name);
             tvProfileEmail.setText(email);
             tvProfileEmailField.setText(email);
@@ -46,17 +48,6 @@ public class ProfileActivity extends AppCompatActivity {
 
         // Back dugme
         findViewById(R.id.btnBackProfile).setOnClickListener(v -> finish());
-
-        // Sacuvaj ime
-        findViewById(R.id.btnSaveProfile).setOnClickListener(v -> {
-            String newName = etProfileName.getText().toString().trim();
-            if (newName.isEmpty()) {
-                Toast.makeText(this, "Unesite ime.", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            tvProfileName.setText(newName);
-            Toast.makeText(this, "Profil azuriran!", Toast.LENGTH_SHORT).show();
-        });
 
         // Promjena lozinke
         findViewById(R.id.btnChangePassword).setOnClickListener(v -> {

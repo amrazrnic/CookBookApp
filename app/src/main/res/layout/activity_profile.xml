@@ -106,15 +106,12 @@
                     android:textSize="12sp"
                     android:layout_marginBottom="6dp" />
 
-                <EditText
+                <TextView
                     android:id="@+id/etProfileName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#FFFFFF"
-                    android:textSize="15sp"
-                    android:background="@android:color/transparent"
-                    android:padding="0dp"
-                    android:inputType="textPersonName" />
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
@@ -143,15 +140,7 @@
 
             </LinearLayout>
 
-            <Button
-                android:id="@+id/btnSaveProfile"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:text="Sacuvaj promjene"
-                android:textColor="#FFFFFF"
-                android:textSize="15sp"
-                android:background="#E94560"
-                android:layout_marginBottom="24dp" />
+
 
             <TextView
                 android:layout_width="wrap_content"

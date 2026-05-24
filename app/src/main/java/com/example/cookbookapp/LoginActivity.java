@@ -91,6 +91,12 @@ public class LoginActivity extends AppCompatActivity {
 
             mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnSuccessListener(result -> {
+                        // Sacuvaj ime u Firebase profil
+                        com.google.firebase.auth.UserProfileChangeRequest profileUpdate =
+                                new com.google.firebase.auth.UserProfileChangeRequest.Builder()
+                                        .setDisplayName(name)
+                                        .build();
+                        result.getUser().updateProfile(profileUpdate);
                         startActivity(new Intent(this, HomeActivity.class));
                         finish();
                     })

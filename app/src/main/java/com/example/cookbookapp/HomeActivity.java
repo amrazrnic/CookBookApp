@@ -63,6 +63,12 @@ public class HomeActivity extends AppCompatActivity {
 
         findViewById(R.id.tvProfileBtn).setOnClickListener(v ->
                 startActivity(new Intent(this, ProfileActivity.class)));
+
+        findViewById(R.id.btnFavoritesHome).setOnClickListener(v ->
+                startActivity(new Intent(this, FavoritesActivity.class)));
+
+        findViewById(R.id.btnShoppingHome).setOnClickListener(v ->
+                startActivity(new Intent(this, ShoppingActivity.class)));
     }
 
     private void loadSampleRecipes() {
@@ -94,7 +100,45 @@ public class HomeActivity extends AppCompatActivity {
         allRecipes.add(new Recipe("6", "Pica Margarita", "Pica", "40 min", "🍕",
                 "Klasična italijanska pica sa mocarelom.",
                 "300g tijesta za picu\n200g pelati paradajza\n150g mocarele\nBazilika\nMaslinovo ulje",
-                "1. Razvuci tijesto.\n2. Nанеси paradajz sos.\n3. Dodaj mocarelu.\n4. Peći 15 min na 220°C."));
+                "1. Razvuci tijesto.\n2. Dodaj paradajz sos.\n3. Dodaj mocarelu.\n4. Peći 15 min na 220°C."));
+        allRecipes.add(new Recipe("7", "Pica Quattro Formaggi", "Pica", "35 min", "🍕",
+                "Pica sa cetiri vrste sira.",
+                "300g tijesta za picu\n100g mocarele\n80g gorgonzole\n80g parmezana\n80g ementala\nMaslinovo ulje",
+                "1. Razvuci tijesto.\n2. Premazati maslinovim uljem.\n3. Rasporedi sve sireve po tijestu.\n4. Peci 15 min na 220°C."));
+
+        allRecipes.add(new Recipe("8", "Penne Arrabiata", "Pasta", "20 min", "🍝",
+                "Pikantna pasta sa paradajz sosom i cili papricicama.",
+                "300g penne paste\n400g pelati paradajza\n3 cena bijelog luka\n2 cili papricice\nMaslinovo ulje\nSo, peršun",
+                "1. Skuhaj penne al dente.\n2. Na ulju proprziti bijeli luk i cili.\n3. Dodaj pelate i kuhaj 10 min.\n4. Pomijesaj sa pastom i pospi peršunom."));
+
+        allRecipes.add(new Recipe("9", "Lazanje", "Pasta", "60 min", "🍝",
+                "Klasicne lazanje sa mesnim sosom i becamelom.",
+                "300g lista za lazanje\n400g mljevenog mesa\n400g pelata\n500ml becamel sosa\n100g parmezana\n1 luk",
+                "1. Proprziti luk i meso.\n2. Dodaj pelate i kuhaj 20 min.\n3. Slažite liste, meso i besamel u tepsiju.\n4. Pospi parmezanom i peci 30 min na 180°C."));
+        allRecipes.add(new Recipe("10", "Omlet sa sirom", "Doručak", "10 min", "🍳",
+                "Brz i ukusan omlet za doručak.",
+                "3 jaja\n50g sira\n1 kasika maslaca\nSo i biber\nPeršun",
+                "1. Umuti jaja sa solju i biberom.\n2. Rastopi maslac na tavi.\n3. Sipaj jaja i peci na srednoj vatri.\n4. Dodaj sir i presavij omlet na pola."));
+
+        allRecipes.add(new Recipe("11", "Tost sa avokadom", "Doručak", "10 min", "🥑",
+                "Zdravi doručak sa avokadom i jajima.",
+                "2 kriške hljeba\n1 avokado\n2 jaja\nLimunov sok\nSo, biber, cili pahuljice",
+                "1. Prepeci hljeb u tosteru.\n2. Zgnjeci avokado sa limunovim sokom i solju.\n3. Namazi avokado na tost.\n4. Dodaj pohirana ili przena jaja na vrh."));
+
+        allRecipes.add(new Recipe("12", "Zobena kasa", "Doručak", "10 min", "🥣",
+                "Hranjiva zobena kasa sa vocem.",
+                "80g zobenih pahuljica\n300ml mlijeka\n1 banana\n1 kasika meda\nBobice po zelji\nCimet",
+                "1. Kuhaj zobene pahuljice u mlijeku 5 min.\n2. Mijesaj dok se ne zgusne.\n3. Poslužiti sa bananama, bobicama i medom.\n4. Pospi cimetom."));
+
+        allRecipes.add(new Recipe("13", "Goveđa supa", "Supa", "60 min", "🍲",
+                "Bogata i hranjiva goveđa supa.",
+                "400g govedine\n2 šargarepe\n2 krompira\n1 luk\n2 stabljike celera\nSo, biber, lovorov list",
+                "1. Skuhaj govedinu u vodi sa lovorovim listom.\n2. Dodaj isijeckano povrce.\n3. Kuhaj 40 min na tihoj vatri.\n4. Začini i poslužiti sa rezancima."));
+
+        allRecipes.add(new Recipe("14", "Krem supa od bundeve", "Supa", "40 min", "🎃",
+                "Kremasta supa od bundeve idealna za jesen.",
+                "600g bundeve\n1 luk\n2 cena bijelog luka\n400ml kokosovog mlijeka\nDjumbir, kurkuma\nSo i biber",
+                "1. Proprziti luk i bijeli luk.\n2. Dodaj isijeckanu bundevu i zacine.\n3. Prelij kokosovim mlijekom i kuhaj 20 min.\n4. Blendati do kremaste konzistencije."));
 
         filteredRecipes.addAll(allRecipes);
     }
@@ -142,6 +186,7 @@ public class HomeActivity extends AppCompatActivity {
             btn.setTextColor(0xFFA0A0B0);
         }
     }
+
 
     private void filterRecipes(String query, String category) {
         filteredRecipes.clear();
